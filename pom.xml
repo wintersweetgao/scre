@@ -266,6 +266,11 @@
                     <includes>
                         <include>edu/hfu/scre/**/*</include>
                     </includes>
+                    <excludes>
+                        <exclude>com/hljcj/acts/**/*</exclude>
+                        <exclude>com/test/**/*</exclude>
+                        <exclude>edu/hfu/scre/action/**/*</exclude>
+                    </excludes>
                     <destFile>${jacoco.path}</destFile>
                     <dataFile>${jacoco.path}</dataFile>
                     <sessionId>jacoco_coverage</sessionId>
