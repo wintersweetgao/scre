@@ -21,6 +21,7 @@
         <spring.version>5.1.9.RELEASE</spring.version>
         <alibaba.druid>1.1.17</alibaba.druid>
         <mysql.connector>8.0.17</mysql.connector>
+        <jacoco.path>${project.build.directory}/jacoco-ut.exec</jacoco.path>
     </properties>
 
     <dependencyManagement>
@@ -256,30 +257,36 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <configuration>
+                    <includes>
+                        <include>edu/hfu/scre/**/*</include>
+                    </includes>
+                    <destFile>${jacoco.path}</destFile>
+                    <dataFile>${jacoco.path}</dataFile>
+                    <sessionId>jacoco_coverage</sessionId>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>pre-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
-<!--    <profiles>
-        <profile>
-            <id>metrics</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jacoco</groupId>
-                        <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.5</version>
-                        <configuration>
-                            &lt;!&ndash;<skip>${jacoco.skip}</skip>&ndash;&gt;
-                            <destFile>${jacoco.path}</destFile>
-                            <dataFile>${jacoco.path}</dataFile>
-                            <sessionId>jacoco_coverage</sessionId>
-                            <includes>
-                                <include>edu/**/*</include>
-                            </includes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>-->
 </project>

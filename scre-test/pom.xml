@@ -11,9 +11,6 @@
 
     <artifactId>scre-test</artifactId>
 
-    <properties>
-        <jacoco.path>${project.build.directory}/jacoco-ut.exec</jacoco.path>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -166,28 +163,7 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
-                <configuration>
-                    <destFile>${jacoco.path}</destFile>
-                    <dataFile>${jacoco.path}</dataFile>
-                    <sessionId>jacoco_coverage</sessionId>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>pre-test</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                        <configuration>
-                            <propertyName>coverageAgent</propertyName>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
 
         </plugins>
 
