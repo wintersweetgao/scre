@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+    <script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/js/index.js"></script>
+    <title>科研管理</title>
+</head>
+<body class="easyui-layout">
+<div data-options="region:'north',border:false" style="height:55px;padding:0px;overflow: hidden">
+    <div id="headerLogo01">
+        <img alt="" src="${ctxPath}/static/images/schoollogo.png" style="height:83px;width:100%">
+    </div>
+</div>
+<div data-options="region:'west',split:false,title:''" style="width:200px;padding:0px;overflow: hidden;">
+    <div class="easyui-accordion" data-options="multiple:false,selected:false" style="width:200px;" id ="accordion_div">
+        <%
+        if (hasPermission('0000')){
+        %>
+        <div title="我的科研" style="overflow:auto;padding:0px;" data-options="iconCls:'icon-save'" data-link="/review/initMyScre">
+            <ul class="container">
+                <li class="dropdown">
+                    <ul class="dropdown-menu show">
+                        <% if(hasPermission('000000')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initScientific">科研课题</a>
+                        </li>
+                        <%} if(hasPermission('000001')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initBook">教材专著</a>
+                        </li>
+                        <%} if(hasPermission('000002')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initPaper">科研论文</a>
+                        </li>
+                        <%} if(hasPermission('000003')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initPatent">专利成果</a>
+                        </li>
+                        <%} if(hasPermission('000004')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initAcademic">学术报告</a>
+                        </li>
+                        <%} if(hasPermission('000005')) {%>
+                        <li><a href="#" data-parent="我的科研"
+                               data-link="/review/initAchievement">科研获奖</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+        <%
+        if (hasPermission('0001')){
+        %>
+        <div title="科研审批(系)" style="overflow:auto;padding:0px;" data-options="iconCls:'icon-approve'" data-link="/statistics/initScreDepartStatistics">
+            <ul class="container">
+                <li class="dropdown">
+                    <ul class="dropdown-menu show">
+                        <% if(hasPermission('000100')) {%>
+                        <li><a href="#" data-parent="科研审批(系)"
+                               data-link="/review/initScientificDepart">科研课题管理</a>
+                        <%} if(hasPermission('000101')) {%>
+                        <li><a href="#" data-parent="科研审批(系)"
+                               data-link="/review/initBookDepart">教材专著管理</a>
+                        </li>
+                        <%} if(hasPermission('000102')) {%>
+                        <li><a href="#" data-parent="科研审批(系)"
+                               data-link="/review/initPaperDepart">科研论文管理</a>
+                        </li>
+                        <%} if(hasPermission('000103')) {%>
+                        <li><a href="#" data-parent="科研审批(系)"
+                               data-link="/review/initPatentDepart">专利成果管理</a>
+                        </li>
+                        <%} if(hasPermission('000104')) {%>
+                        <li><a href="#" data-parent="科研审批(系) "
+                               data-link="/review/initAcademicDepart">学术报告管理</a>
+                        </li>
+                        <%} if(hasPermission('000105')) {%>
+                        <li><a href="#" data-parent="科研审批(系)"
+                               data-link="/review/initAchievementDepart">科研获奖管理</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+        <%
+        if (hasPermission('0002')){
+        %>
+        <div title="科研审批(院)" style="overflow:auto;padding:0px;" data-options="iconCls:'icon-approve'" data-link="/statistics/initScreCollegeStatistics">
+            <ul class="container">
+                <li class="dropdown">
+                    <ul class="dropdown-menu show">
+                        <% if(hasPermission('000200')) {%>
+                        <li><a href="#" data-parent="科研审批(院)"
+                               data-link="/review/initScientificCollege">科研课题管理</a>
+                        </li>
+                        <%} if(hasPermission('000201')) {%>
+                        <li><a href="#" data-parent="科研审批(院)"
+                               data-link="/review/initBookCollege">教材专著管理</a>
+                        </li>
+                        <%} if(hasPermission('000202')) {%>
+                        <li><a href="#" data-parent="科研审批(院)"
+                               data-link="/review/initPaperCollege">科研论文管理</a>
+
+                        </li>
+                        <%} if(hasPermission('000203')) {%>
+                        <li><a href="#" data-parent="科研审批(院)"
+                               data-link="/review/initPatentCollege">专利成果管理</a>
+                        </li>
+                        <%} if(hasPermission('000204')) {%>
+                        <li><a href="#" data-parent="科研审批(院) "
+                               data-link="/review/initAcademicCollege">学术报告管理</a>
+                        </li>
+                        <%} if(hasPermission('000205')) {%>
+                        <li><a href="#" data-parent="科研审批(院)"
+                               data-link="/review/initAchievementCollege">科研获奖管理</a>
+                        </li>
+                         <%}%>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}
+        if (hasPermission('0003')){
+        %>
+        <div title="科研成果统计" style="overflow:auto;padding:0px;" data-options="iconCls:'icon-search'" data-link="/statistics/initScreCollegeStatistics">
+            <ul class="container">
+                <li class="dropdown">
+                    <ul class="dropdown-menu show">
+                        <% if(hasPermission('000300')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initScientificstatistics">科研课题统计</a>
+                        </li>
+                        <%} if(hasPermission('000301')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initBookStatistics">教材专著统计</a>
+                        </li>
+                        <%} if(hasPermission('000302')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initPaperStatistics">科研论文统计</a>
+                        </li>
+                        <%} if(hasPermission('000303')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initPatentStatistics">专利成果统计</a>
+                        </li>
+                        <%} if(hasPermission('000304')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initAcademicStatistics">学术报告统计</a>
+                        </li>
+                        <%} if(hasPermission('000305')) {%>
+                        <li><a href="#" data-parent="科研成果统计"
+                               data-link="/statistics/initAchievementStatistics">科研获奖统计</a>
+                        </li>
+                         <%}%>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+        <%
+        if (hasPermission('0005')){
+        %>
+        <div title="系统设置" data-options="iconCls:'icon-config'" style="overflow:auto;padding:0px;">
+            <ul class="container">
+                <li class="dropdown">
+                    <ul class="dropdown-menu show">
+                        <li><a href="#" data-parent="系统设置" data-link="/sysset/initCycle">达标周期管理</a></li>
+                        <li><a href="#" data-parent="系统设置" data-link="/sysset/initStaffTopic">职称科研达标标准</a></li>
+                        <li><a href="#" data-parent="系统设置" data-link="/sysset/initScreStandard">科研达标评分标准</a></li>
+                        <li><a href="#" data-parent="系统设置" data-link="/sysset/initDict">数据字典</a></li>
+                        <li><a href="#" data-parent="系统设置" data-link="/sysset/initNotice">发布公告</a></li>
+                          <li><a href="#" data-parent="系统设置" data-link="/sysset/initHfirstPicture">首页图片展示</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+        <div title="退出" style="padding:0px;" data-options="collapsible:false">
+        </div>
+
+    </div>
+</div>
+<div data-options="region:'south',border:false" style="height:25px;background:#FFFFFF;padding:1px;">
+    开发单位：黑龙江财经学院财经信息工程系
+</div>
+<div data-options="region:'center',title:'首页'" id="main_display" style="overflow:hidden; ">
+    <iframe id="main_frame" style="width:100%;height:100%;border:none;overflow:hidden;" > </iframe>
+</div>
+</body>
+</html>

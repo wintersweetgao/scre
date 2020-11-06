@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title>黑龙江财经学院</title>
+		<link href="${ctxPath}/static/css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+		<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	    <script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+		<script type="text/javascript" src="${ctxPath}/static/js/index.js"></script>		
+		<script type="text/javascript" src="${ctxPath}/static/js/koala.js"></script>
+		<script type="text/javascript" src="${ctxPath}/static/js/comcus.js"></script>
+	    <script type="text/javascript" src="${ctxPath}/static/js/login.js"></script>
+	</head>
+	
+	<body>
+	<div class="easyui-layout" style="width:100%;height:1780px;">
+		<div data-options="region:'north',split:false" style="height:140px;overflow:hidden;">
+			<div><a title="黑龙江财经学院"><img src="${ctxPath}/static/img/schoollogo.png" width="100%" height="140" border="0" alt="黑龙江财经学院" title="黑龙江财经学院"></a></div>
+		</div>
+		<div data-options="region:'center'" style="text-align: center;overflow:hidden;">
+			<table style="width: 1181px;margin-left: auto;margin-right: auto">
+				<tr style="height:400px;overflow:hidden;">
+					<td colspan="3">
+						<div class="bannerbox">
+				        <!--banner开始-->
+				        <div class="banner_1">
+				            <div id="fsD1" class="focus">
+				                    <script language="javascript" src="${ctxPath}/static/js/dynclicks.js"></script><div id="D1pic1" class="fPic">
+				                    <ul>
+				                    <% 
+				                    	for (pic in  lsp) {
+				                    		if (pic.hfirstPicturePath!=null){
+				                    %>
+				                        <li class="fcon" style="display: none;">
+											<img src="${ctxPath}${pic.hfirstPicturePath}" style="opacity: 1;">
+											<input type="hidden" value="${pic.hfirstPicturePath}">
+										</li>
+									<%}}%>
+				                    </ul>
+				                </div>
+				                <div class="fbg">
+				                    <div id="D1fBt" class="D1fBt">
+				                    <% 
+				                    	var i=1;
+				                    	for (pic in  lsp) {
+				                    		if (pic.hfirstPicturePath!=null){
+				                    			if (i==0){
+				                    %>
+				                    	<a hidefocus="" class="current" href="javascript:void(0)" target="_self"><i>${i}</i></a> 
+				                    <%          }else{           %>
+				                        <a hidefocus="" class="" href="javascript:void(0)" target="_self"><i>${i}</i></a> 
+				                     <%			}
+				                                i++;
+				                     		}
+				                     }%>
+				                      </div>
+				                </div>
+				                <span class="prev"></span>
+				                <span class="next"></span>
+				            </div>
+				        </div>
+				        <!--banner结束-->
+				    	</div>
+					</td>
+				</tr>
+				<tr style="height:250px;overflow:hidden; vertical-align: top;text-align: left;">
+					<td style="width:33%">
+					<form  method="post"  id="loginForm" target="_self" action="${ctxPath}/userLogin">
+					<div class="xyxw">
+			            <div class="title_a" > <span>系统登录</span></div>
+			            <div class="xyxw_list">
+			            	<table style="margin-top: 5px;width:100%">
+			            	<tr style="height: 30px;">
+					    	 <td style="width:25%;text-align: center;"><font color="#004A99" size="2"><strong>工号:</strong></font></td>
+					    	 <td><input id="txt_userName" name="userCode" class="easyui-textbox"  data-options="iconCls:'icon-search'" style="width:200px"></td>
+					    	</tr>
+					    	<tr style="height: 30px;">
+					    	 <td style="width:25%;text-align: center;"><font color="#004A99" size="2"><strong>密码:</strong></font></td>
+					    	 <td><input id="txt_userPass" name="userPass" class="easyui-passwordbox"  prompt="请输入您的密码" iconWidth="28" style="width:200px;padding:10px"></td>
+					    	</tr>
+					    	<tr style="height: 30px;"><td colspan="2">
+					    	<div style="width:100%;text-align: center;">
+							   <font  color="red" >${mess}</font>
+						    </div>
+					    	</td></tr> 
+					    	
+					         <tr>
+					         <td style="text-align: center" colspan="2">
+					         	<a id="btn_login" name="button"  type="button" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="margin-right: 25px;" >登陆</a>
+					    	    
+					    	    <a id="btn_zhuce" name="button"  type="button" href="${authUrlReg}" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" >注册</a></td>
+					    	 </tr>
+			              </table>
+			           </div>
+			        </div>
+			        </form>
+					</td>
+					<td style="width:33%">
+					<div class="xyxw tzgg">
+						<div class="title_a">
+						 <a id="btn_add_weekReport" href="/scre/getNoticeall" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+							<span>通知公告</span>
+						</div>
+						<div class="xyxw_list">
+							<table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+								border="false" id="tbl_notice_detail">
+							</table>
+						</div>
+					</div>
+					
+					</td>
+					<td  style="width:34%" rowspan="4">
+						<div class="title_a"> <span>专题专栏</span></div>
+				            <div class="ztwz_nr">
+								 <a href="http://bwcx.hfu.edu.cn/"              title="" onclick="_addDynClicks(&quot;wbimage&quot;, 1451276307, 40804)" target="_blank"><img src="${ctxPath}/static/img/201909172.jpg"> </a>   
+								  
+								 <a href="https://www.hfu.edu.cn/ztzl/wmxy.htm" title="" onclick="_addDynClicks(&quot;wbimage&quot;, 1451276307, 40802)" target="_blank"><img src="${ctxPath}/static/img/zt3.png"> </a>   
+								  
+								 <a href="https://www.hfu.edu.cn/ztzl/lcdx.htm" title="" onclick="_addDynClicks(&quot;wbimage&quot;, 1451276307, 40800)" target="_blank"><img src="${ctxPath}/static/img/zt1.png"> </a>   
+								  
+								 <a href="http://pgzl.hfu.edu.cn/index.htm"     title="" onclick="_addDynClicks(&quot;wbimage&quot;, 1451276307, 40801)" target="_blank"><img src="${ctxPath}/static/img/zt2.png"> </a>   
+								  
+								 <a href="https://www.hfu.edu.cn/ztzl/xfjs.htm" title="" onclick="_addDynClicks(&quot;wbimage&quot;, 1451276307, 40803)" target="_blank"><img src="${ctxPath}/static/img/zt4.png"> </a>   
+				       </div>
+				      <br>
+				        <div class="kstd_nr" style="padding-left:16%;">
+				              <script language="javascript" src="${ctxPath}/static/js/openlink.js"></script>
+				              <a href="http://172.16.20.59/(fd3rz1ylrwkxuyubs2oqqt45)/default2.aspx" title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 1001)"><img src="${ctxPath}/static/img/kstd1.png"><br>教务在线</a>
+				              <a href="https://www.hfu.edu.cn/ztzl/xxgk.htm"      title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 1002)"><img src="${ctxPath}/static/img/kstd2.png"><br>信息公开</a>
+				              <a href="https://www.hfu.edu.cn/xxgk/xyfg/xyfg.htm" title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 1003)"><img src="${ctxPath}/static/img/kstd3.png"><br>校园风光</a>
+				              <a href="https://www.hfu.edu.cn/xwpt/xcp.htm"       title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 1004)"><img src="${ctxPath}/static/img/kstd4.png"><br>龙财宣传片</a>
+				        </div>
+					
+					</td>
+				</tr>
+				<tr style="height:250px;overflow:hidden;text-align: left;">
+					<td>
+					<div class="title_a"> 
+					    <a id="btn_add_work1" href="/scre/excellenceWorks/excellenceCaiXin" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+					    <span>财经信息工程系</span>
+					</div>
+		            <div class="xyxw_list">
+		               <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+									border="false" id="tbl_cxx_detail">
+								</table>
+		            </div>
+					</td>
+					<td>
+					<div class="xyxw">
+			            <div class="title_a"> 
+			                <a id="btn_add_work2" href="/scre/excellenceWorks/excellenceJingJi" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+			                <span>经济系</span>
+			            </div>
+			            <div class="xyxw_list">
+			               <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+							border="false" id="tbl_jjx_detail">
+						</table>
+			            </div>
+			        </div>
+					</td>
+				</tr>
+				<tr style="height:250px;overflow:hidden;text-align: left;">
+					<td>
+					<div class="xyxw">
+			            <div class="title_a"> 
+			                <a id="btn_add_work3" href="/scre/excellenceWorks/excellenceYiShu" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+			                <span>艺术系</span></div>
+			            <div class="xyxw_list">
+			                  <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+							border="false" id="tbl_ysx_detail">
+						</table>
+			            </div>
+			        </div>
+					</td>
+					<td>
+					<div class="xyxw">
+			            <div class="title_a"> 
+			                <a id="btn_add_work4" href="/scre/excellenceWorks/excellenceRenWen" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+			                <span>人文科学系</span></div>
+			            <div class="xyxw_list">
+			                <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+							border="false" id="tbl_rwx_detail">
+						</table>
+			            </div>
+			        </div>
+					</td>
+				</tr>
+				<tr style="height:250px;overflow:hidden;text-align: left;">
+					<td>
+					<div class="xyxw">
+						<div class="title_a"> 
+						    <a id="btn_add_work5" href="/scre/excellenceWorks/excellenceKuaiJi" style="width:30%;height:80%" data-options="iconCls:'icon-add'">更多</a>
+						    <span>会计系</span></div>
+			            <div class="xyxw_list">
+			                 <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+							border="false" id="tbl_kjx_detail">
+						</table>
+			            </div>
+			        </div>
+			        </td>
+					<td>
+					<div class="xyxw">
+			            <div class="title_a">
+			                <a id="btn_add_work6" href="/scre/excellenceWorks/excellenceGuanLi" style="width:10%;height:80%" data-options="iconCls:'icon-add'">更多</a> 
+			                <span>管理系</span></div>
+			            <div class="xyxw_list">
+			                 <table class="easyui-datalist" style="width: 90%; height: 200px;overflow:hidden"
+							border="false" id="tbl_glx_detail">
+						</table>
+			            </div>
+			        </div> 
+					</td>
+				</tr>
+			
+			</table>
+			
+		
+		</div>		
+		<div data-options="region:'south',split:false" style="height:150px;overflow:hidden;">
+			<div class="f_lj">
+		        <div class="width">
+		          <div class="gxwz">各系网站：
+					<a href="http://tcjsj.hfu.edu.cn/" title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41230)">财经信息工程系</a>
+					<a href="http://kjx.hfu.edu.cn/"   title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41231)">会计系</a> 
+					<a href="http://mjx.hfu.edu.cn/"   title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41232)">经济系</a>
+					<a href="http://gsgl.hfu.edu.cn/"  title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41233)">管理系</a>
+					<a href="http://ysx.hfu.edu.cn/"   title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41234)">艺术系</a>
+					<a href="http://rwkxx.hfu.edu.cn/" title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41235)">人文科学系</a>
+		          </div>
+	        	</div>
+	      	</div>
+		    <div class="footer">
+		     <div class="width">
+		         <div class="footer_a">
+		            <div class="yqlj_nr">友情链接：
+						<a href="http://www.nncc626.com/"           title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41236)">中国禁毒网</a> |
+						<a href="http://www.626china.org/Index.htm" title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 41237)">中国禁毒数字展览馆</a> |
+						<a href="http://www.moe.gov.cn/"            title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 51692)">中华人民共和国教育部</a> |
+						<a href="https://www.hljedu.gov.cn/"        title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 51693)">黑龙江省教育厅</a> |
+						<a href="http://www.univs.cn/"              title="" onclick="_addDynClicks(&quot;wburl&quot;, 1451276307, 51694)">中国大学生在线</a> 
+		            </div>
+		            <div class="f_wz">
+						<p>黑龙江财经学院 © 2006-2016 版权所有 <a href="http://www.beian.miit.gov.cn/" target="_blank" textvalue="黑ICP备19004778号 ">黑ICP备19004778号 </a>&nbsp; 学院地址：哈尔滨市利民开发区学院路1230号<br>招生电话：0451—85911881、85911882、85911883 &nbsp; &nbsp;邮政编码：150025 左：官方微信　右：官方微博</p>
+		            </div>
+		        </div>
+		        <div class="ewm">    
+					<img src="${ctxPath}/static/img/2019.4.10weixin(1).jpg">    <img src="${ctxPath}/static/img/2019.4.10guanbo.jpg">    </div>
+		        <div class="clear"></div>
+		    </div>
+		   </div>
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript">
+            Qfast.add('widgets', { path: "${ctxPath}/static/js/terminator.js", type: "js", requires: ['fx'] });
+            Qfast(false, 'widgets', function () {
+                K.tabs({
+                    id: 'fsD1',   //焦点图包裹id
+                    conId: "D1pic1",  //** 大图域包裹id
+                    tabId:"D1fBt",
+                    tabTn:"a",
+                    conCn: '.fcon', //** 大图域配置class
+                    auto: 1,   //自动播放 1或0
+                    effect: 'fade',   //效果配置
+                    eType: 'click', //** 鼠标事件
+                    pageBt:true,//是否有按钮切换页码
+                    bns: ['.prev', '.next'],//** 前后按钮配置class
+                    interval: 5000  //** 停顿时间
+                })
+            })
+        </script>
+</html>

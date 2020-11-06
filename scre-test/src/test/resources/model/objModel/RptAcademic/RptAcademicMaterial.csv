@@ -1,0 +1,7 @@
+class,property,type,rule,flag,value
+edu.hfu.scre.entity.RptAcademicMaterial,materialTitle,java.lang.String,,Y,封面
+,academic,edu.hfu.scre.entity.RptAcademic,,N,null
+,materialPath,java.lang.String,,Y,null
+,ordernum,java.lang.Integer,,Y,0
+,materialId,java.lang.Integer,,Y,0
+,createDate,java.util.Date,,D,today

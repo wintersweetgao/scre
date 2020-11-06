@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screManager>
+	<SysDictionary listClass="edu.hfu.scre.entity.xmlBean.SysDictionaryList">
+		<!-- 科研记录状态-->
+		<item dictKey="AApprove"  dictValue="新建"  	 dictValue1="" dictType="审批状态" />
+		<item dictKey="BApprove"  dictValue="未提交"  dictValue1="" dictType="审批状态" />
+		<item dictKey="CApprove"  dictValue="已提交"  dictValue1="" dictType="审批状态" />
+		<item dictKey="DApprove"  dictValue="系审批"  dictValue1="" dictType="审批状态" />
+		<item dictKey="EApprove"  dictValue="院审批"  dictValue1="" dictType="审批状态" />
+		<item dictKey="FApprove"  dictValue="删除"  	 dictValue1="" dictType="审批状态" />
+		<!-- 职称 -->
+		<item dictKey="教授(正高)级"  	dictValue="教授(正高)级" 	dictValue1="" dictType="职称分类" />
+		<item dictKey="副教授(副高)级"  	dictValue="副教授(副高)级" 	dictValue1="" dictType="职称分类" />
+		<item dictKey="讲师(中)级"  	dictValue="讲师(中)级"  	dictValue1="" dictType="职称分类" />
+		<item dictKey="助教及以下"  	dictValue="助教及以下" 		dictValue1="" dictType="职称分类" />
+		
+		<!-- 教育程度 -->
+		<item dictKey="小学"  	dictValue="小学" 	dictValue1="" dictType="教育程度" />
+		<item dictKey="初中"  	dictValue="初中" 	dictValue1="" dictType="教育程度" />
+		<item dictKey="高中"  	dictValue="高中"  	dictValue1="" dictType="教育程度" />
+		<item dictKey="本科"  	dictValue="本科" 		dictValue1="" dictType="教育程度" />
+		<item dictKey="研究生"  	dictValue="研究生" 		dictValue1="" dictType="教育程度" />
+		<item dictKey="其他"  	dictValue="其它" 		dictValue1="" dictType="教育程度" />
+		
+		<!-- 科研达标类型 -->
+		<item dictKey="纵向科研"  	dictValue="纵向科研" 	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="横向科研"  	dictValue="横向科研" 	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="科研论文"  	dictValue="科研论文" 	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="学术报告"  	dictValue="学术报告"  	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="教材专著" 	dictValue="教材专著" 	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="专利成果" 	dictValue="专利成果" 	dictValue1="" dictType="科研达标类型" />
+		<item dictKey="科研获奖"  	dictValue="科研获奖" 	dictValue1="" dictType="科研达标类型" />
+		
+		<!-- 科研达标类型 -->
+		<item dictKey="RptAcademic"  		dictValue="学术报告" 	dictValue1="" dictType="统计表标题" />
+		<item dictKey="RptAchievement"  	dictValue="科研获奖" 	dictValue1="" dictType="统计表标题" />
+		<item dictKey="RptBook"  			dictValue="教材专著" 	dictValue1="" dictType="统计表标题" />
+		<item dictKey="RptPaper"  			dictValue="学术论文"  	dictValue1="" dictType="统计表标题" />
+		<item dictKey="RptPatent" 			dictValue="专利成果" 	dictValue1="" dictType="统计表标题" />
+		<item dictKey="RptScientific"  		dictValue="科研课题" 	dictValue1="" dictType="统计表标题" />
+		
+		<!-- 科研项目类型 -->
+		<item dictKey="国家级项目"  	dictValue="国家级项目" 	dictValue1="" 	dictType="纵向科研" />
+		<item dictKey="省级项目"  		dictValue="省级项目" 		dictValue1="" 	dictType="纵向科研" />
+		<item dictKey="厅局级项目"  	dictValue="厅局级项目"  	dictValue1="" 	dictType="纵向科研" />
+		<item dictKey="学会级项目"  dictValue="学会级项目" 	dictValue1="" 	dictType="纵向科研" />
+		<item dictKey="院级科研项目"  	dictValue="院级科研项目" 	dictValue1="" 	dictType="纵向科研" />
+		<item dictKey="入校经费30万以上"  	dictValue="入校经费30万以上" 	dictValue1="" 	dictType="横向科研" />
+		<item dictKey="入校经费15-30万"  	dictValue="入校经费15-30万" 		dictValue1="" 	dictType="横向科研" />
+		<item dictKey="入校经费5-15万"  	dictValue="入校经费5-15万"  	dictValue1="" 	dictType="横向科研" />
+		<item dictKey="入校经费1-5万"  dictValue="入校经费1-5万" 	dictValue1="" 	dictType="横向科研" />
+		<!-- 论文类型 -->
+		<item dictKey="中文核心期刊"  		dictValue="中文核心期刊" 		dictValue1="" 	dictType="科研论文" />
+		<item dictKey="普通本科大学学报"  	dictValue="普通本科大学学报" 	dictValue1="" 	dictType="科研论文" />
+		<item dictKey="普通学院学报"  		dictValue="普通学院学报"  		dictValue1="" 	dictType="科研论文" />
+		<item dictKey="省级一般学术期刊"  	dictValue="省级一般学术期刊" 	dictValue1="" 	dictType="科研论文" />
+		<item dictKey="中国知网检索刊物"  	dictValue="中国知网检索刊物" 	dictValue1="" 	dictType="科研论文" />
+		<!-- 学术报告 -->
+		<item dictKey="院级好评"  		dictValue="院级好评" 	dictValue1="" 	dictType="学术报告" />
+		<item dictKey="系级好评"  		dictValue="系级好评" 	dictValue1="" 	dictType="学术报告" />
+		<!-- 专著 -->
+		<item dictKey="教材著作"  		dictValue="教材著作" 	dictValue1="" 	dictType="教材著作" />
+		<!-- 专利 -->
+		<item dictKey="发明专利"  		dictValue="发明专利" 	dictValue1="" 	dictType="专利成果" />
+		<item dictKey="实用新型"  		dictValue="实用新型" 	dictValue1="" 	dictType="专利成果" />
+		<item dictKey="外观设计"  		dictValue="外观设计" 	dictValue1="" 	dictType="专利成果" />
+		<!-- 科研获奖积分 -->
+		<item dictKey="国家级一等奖"  		dictValue="国家级一等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="国家级二等奖"  		dictValue="国家级二等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="国家级三等奖"  		dictValue="国家级三等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="省级一等奖"  		dictValue="省级一等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="省级二等奖"  		dictValue="省级二等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="省级三等奖"  		dictValue="省级三等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="厅局级一等奖"  		dictValue="厅局级一等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="厅局级二等奖"  		dictValue="厅局级二等奖" 	dictValue1="" 	dictType="科研获奖" />
+		<item dictKey="厅局级三等奖"  		dictValue="厅局级三等奖" 	dictValue1="" 	dictType="科研获奖" />
+	</SysDictionary>
+</screManager>

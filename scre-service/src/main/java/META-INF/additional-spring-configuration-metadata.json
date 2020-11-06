@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "beetl.templatesPath",
+    "type": "java.lang.String",
+    "description": "A description for 'beetl.templatesPath'"
+  },
+  {
+    "name": "beetlsql.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'beetlsql.enabled'"
+  }
+]}

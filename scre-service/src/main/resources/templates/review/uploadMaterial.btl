@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<div id="dlg_commonmaterial" class="easyui-dialog" title="维护附件材料" style="width:600px;height:350px;top:80px;left:260px"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#btn_material',closable:false,closed:true">
+    <form id="material_fileForm" method="post" enctype="multipart/form-data">
+    	<input type="hidden" name="materialType" id="txt_materialType" value="" />
+    	<input type="hidden" name="screNameTitle" id="txt_screNameTitle" value="">
+    	<input type="hidden" name="screId" id="txt_screId" value="">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+			<tr>
+				<th colspan="3" style="text-align: center;font-size: 18px;height: 33px;margin-bottom: 10px;">提交'<span id="sp_filetitle"></span>'证明材料</th>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td style="width: 10%">编号</td>
+				<td style="width: 30%">材料标题</td>
+				<td style="text-align: left;">材料文件(*.jpg;<200k)</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td >1<input type="hidden" name="ordernum" value="1" /></td>
+				<td style="width: 30%"><input type="text" name="materialTitle" readonly="readonly" value="封面" class="easyui-textbox" required="required"/></td>
+				<td style="text-align: left;">
+					<input class="easyui-filebox" id="file_material0" name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td >2<input type="hidden" name="ordernum" value="2" /></td>
+				<td style="width: 30%"><input type="text" name="materialTitle"  value="目录"  class="easyui-textbox" /></td>
+				<td style="text-align: left;">
+					<input class="easyui-filebox" id="file_material1" name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td >3<input type="hidden" name="ordernum" value="3" /></td>
+				<td style="width: 30%"><input type="text" name="materialTitle"  value="正文"  class="easyui-textbox" /></td>
+				<td style="text-align: left;">
+					<input class="easyui-filebox" id="file_material2" name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td >4<input type="hidden" name="ordernum" value="4" /></td>
+				<td style="width: 30%"><input type="text" name="materialTitle"   class="easyui-textbox"/></td>
+				<td style="text-align: left;">
+					<input class="easyui-filebox"  id="file_material3" name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td >5<input type="hidden" name="ordernum" value="5" /></td>
+				<td style="width: 30%"><input type="text" name="materialTitle"   class="easyui-textbox"/></td>
+				<td style="text-align: left;">
+					<input class="easyui-filebox" id="file_material4" name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+				</td>
+			</tr>
+			</table>
+			</div>
+</form>	
+</div>
+<div id="btn_material" style="width: 100%;text-align: center;">
+	<a id="btn_materialSave" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+	<a id="btn_materialCancel" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+</div>
+</body>
+</html>

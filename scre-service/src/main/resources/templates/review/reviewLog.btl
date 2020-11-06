@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<table id="tbl_logDetail" class="easyui-datagrid" data-options="fitColumns:true,
+				singleSelect:true,border:false,fit:true,rownumbers:true,autoRowHeight:false,
+				nowrap:true,striped:true">
+	<thead>
+		<tr>
+			<th data-options="field:'staffName',width:100">操作人</th>
+			<th data-options="field:'action',width:100">动作</th>
+			<th data-options="field:'chgStatus',width:180">状态变化</th>
+			<th data-options="field:'memo',width:400,formatter:remarkFormater">备注</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for (lg in log) {%>
+		<tr>
+			<td>${lg.staffName}</td>
+			<td>${lg.action}</td>
+			<td>${lg.chgStatus}</td>
+			<td>${lg.memo}</td>
+		<% } %>
+		</tr>
+	</tbody>
+</table>
+    <script>
+        function remarkFormater (value, row, index) {
+            var content = '';
+            var abValue = value +'';
+            if(value != undefined){
+                if(value.length>=23) {
+                    abValue = value.substring(0,20) + "...";
+                    content = '<div title="' + value + '" class="easyui-tooltip">' + abValue + '</div>';
+                }else{
+                    content = '<div title="' + abValue + '" class="easyui-tooltip">' + abValue + '</div>';
+                }
+            }
+            return content;
+        }
+    </script>
+</body>
+</html>

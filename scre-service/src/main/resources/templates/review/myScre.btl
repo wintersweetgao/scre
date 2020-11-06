@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/review/css/myScre.css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/highcharts/highcharts.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/review/js/myScre.js"></script>
+<title></title>
+</head>
+<body class="easyui-layout">
+	<div data-options="region:'north',split:false" style="height:135px;overflow: hidden">
+		<table style="text-align: center;width:100%;" class="datagrid-btable myTable" id="tbl_staffdetail">
+		<tr>
+			<td style="width: 100px;height: 20px;">员工姓名</td>
+			<td style="width: 180px;height: 20px;" id="td_staffName">${user.staffName}</td>
+			<td style="width: 180px;height: 20px;">员工性别</td>
+			<td style="width: 180px;height: 20px;" id="td_staffSex">${user.staffSex}</td>
+			<td style="width: 100px;height: 20px;">联系电话</td>
+			<td style="width: 180px;height: 20px;" id="td_staffPhone">${user.staffPhone}</td>
+			<td rowspan="4" style="padding: 0px;"><img style="width: 120px;height: 110px" src="${ctxPath}/static/images/default.jpg"/></td>
+			<td rowspan="2" style="border: none"></td>
+			<td  id="myscre_btn_information" href="#" style="margin: 2px 16px;width: 150px;height: 25px;margin-left:249px" 
+		           class="easyui-linkbutton" data-options="iconCls:'icon-ok'">修改个人信息</td>
+		</tr>
+		<tr>
+			<td>
+				归属部门
+				<input type="hidden" id="td_departId" value="${user.departId}">
+				<input type="hidden" id="td_parentDepartId" value="${user.parentDepartId}">
+			</td>
+			<td id="td_staffParentDepart" >${user.staffParentDepart}</td>
+			<td>员工职务 <input type="hidden" id="td_postId" value="${user.postId}"></td>
+			<td id="td_poststr">${user.poststr}</td>
+			<td>员工职称</td>
+			<td id="td_staffTitle">${user.staffTitle}</td>
+			<td  id="myscre_btn_password"  href="#" style="margin: 2px 16px;width: 150px;height: 25px;margin-left:249px" 
+		           class="easyui-linkbutton" data-options="iconCls:'icon-ok'">修改个人密码</td>
+		</tr>
+		<tr>
+			<td colspan="6" style="font-size: 16px;">
+				您已经提交科研成果<span style="font-size: 18px;color: red;" id="sp_totalCount">0</span>个，
+				预计可得<span style="font-size: 18px;color: red" id="sp_totalMark"></span>科研积分，
+				已经获得<span style="font-size: 18px;color: red;" id="sp_approMark"></span>科研积分			
+			</td>
+		<tr>
+			<td colspan="6" style="font-size: 16px;" id="td_overMess">
+				恭喜您，您已经完成本轮达标
+			</td>
+		</tr>
+		</table>
+	</div>
+	<!-- 个人信息 -->
+	<div id="myscre_information" class="easyui-dialog" title="修改" style="width:600px;height:400px;top:80px;"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#myscre_btnsave_information',closable:false,closed:true">
+    	<form id="myscre_userForm" method="post">
+			<div style="width: 100%; text-align: center;">
+				<table	style="width: 95%; margin-left: auto; margin-right: auto; margin-top: 20px;" class="datagrid-btable myTable" >
+					<tr style="vertical-align: middle;">
+					<td style="width: 20%;text-align: right">工号:  </td>
+					<td style="width: 30%;text-align: left "><input style="width:150px;" type="text" name="userCode" id="txt_userCode" class="easyui-textbox" required="required" value="${user.userCode}"/></td>
+					<td style="width: 20%;text-align: right">姓名:  </td>
+					<td style="width: 30%;text-align: left "><input style="width:150px;" type="text" name="staffName" id="txt_staffName" class="easyui-textbox" required="required" value="${user.staffName}"/></td>
+					</tr>
+					<tr style="vertical-align: middle;">
+					 <td style="width: 20%;text-align: right">出生日期: </td>
+						<td  style="width: 30%;text-align: left "><input style="width:150px;" type="text" name="staffBirthDay" id="txt_staffBirthDay" class="easyui-datebox" data-options="editable:false" value="${user.staffBirthDayStr}"/></td>
+					   <td style="width: 20%;text-align: right">民族: </td>
+						<td style="width: 30%;text-align: left ">
+						<select id="txt_staffNational" class="easyui-combobox"	name="staffNational" style="width: 150px;" data-options="editable:false">
+								<option value="${user.staffNational}">${user.staffNational}</option>
+								<option>汉族</option>
+								<option>满族</option>
+								<option>回族</option>
+								<option>蒙古族</option>
+								<option>朝鲜族</option>
+								<option>其他</option>
+						</select></td>
+					</tr>
+					<tr style="vertical-align: middle;">
+						<td style="width: 20%;text-align: right">教育程度:  </td>
+						<td style="width: 30%;text-align: left ">
+						<select id="txt_staffEducation" class="easyui-combobox" name="staffEducation"  style="width:150px;" data-options="editable:false">
+						    <option value="${user.staffEducation}">${user.staffEducation}</option>
+						    <% for (dict in dicto) {%>
+							<option value="${dict.dictKey}"> ${dict.dictValue}</option>
+							<% } %>
+						</select><input type="hidden" name="screTypic"  value="教育程度">
+						</td>
+						  <td style="width: 20%;text-align: right">联系方式:   </td>
+					    <td style="width: 30%;text-align: left "><input style="width:150px;" type="text" name="staffPhone" id="txt_staffPhone"  class="easyui-textbox"  data-options="prompt:'请输入数字'" required="required" value="${user.staffPhone}"/></td>									
+					</tr>
+					<tr style="vertical-align: middle;">					
+						    <td style="width: 20%;text-align: right">系部处:   </td>
+                        <td style="width: 30%;text-align: left ">
+                        <select id="txt_parentDepartId" class="easyui-combobox" name="parentDepartId" data-options="editable:false"  style="width: 150px">
+       				 	</select>
+       				 	</td>
+     				 <td style="width: 20%;text-align: right">科室: </td>
+						<td  style="width: 30%;text-align: left ">
+					<select  class="easyui-combobox" name="departId" id="txt_departId" data-options="editable:false"  style="width: 150px">
+      				</select>
+      				</td>
+					</tr>
+					<tr style="vertical-align: middle;">
+					    <td style="width: 20%;text-align: right">职务: </td>
+						<td  style="width: 30%;text-align: left " >
+							<select id=txt_postIds class="easyui-combobox" name="postIds" data-options="multiple:true,groupField:'group',prompt:'请选择职务',editable:false"  style="width: 150px">
+                        <%
+                          for(post in posts){
+                         %>
+                         <option value="${post.postId}">${post.postName}</option>
+                        <%
+                         }
+                         %>  
+      				</select>
+						</td>
+				        <td style="width: 20%;text-align: right"><label for="staffTitle">职称:</label>   </td>
+					    <td style="width: 30%;text-align: left ">
+					    <select id="txt_staffTitle" class="easyui-combobox"	name="staffTitle" style="width: 150px;" data-options="editable:false">
+								<option value="${user.staffTitle}">${user.staffTitle}</option>
+								<% for (dict in dicts) {%>
+							<option value="${dict.dictKey}"> ${dict.dictValue}</option>
+							<% } %>
+						</select><input type="hidden" name="screType"  value="职称分类">
+						</td>
+					</tr>
+					<tr>
+					<td style="width: 20%;text-align: right">入职日期:  </td>					   
+						<td style="width: 30%;text-align: left "><input style="width:150px;" type="text" name="entryDate" id="txt_entryDate" class="easyui-datebox" data-options="editable:false" value="${user.entryDateStr}"/></td>
+				
+						<td style="width: 20%;text-align: right">性别: </td>
+						<td style="width: 30%;text-align: left ">
+								<div style=" float: left; margin-right: 28px;">
+									<%if(user.staffSex =="女"){%>
+									   <input class="easyui-radiobutton" data-options="labelWidth:25"   name="staffSex" value="男" label="男">
+									   <input class="easyui-radiobutton" data-options="checked:true,labelWidth:25"  name="staffSex"  value="女" label="女">
+
+									<%}else{%>
+									    <input class="easyui-radiobutton" data-options="checked:true,labelWidth:25"   name="staffSex"  value="男" label="男">
+									    <input class="easyui-radiobutton" data-options="labelWidth:25"  name="staffSex" value="女" label="女">
+									<%}%>
+
+								</div>
+						</td>			  
+					</tr>
+					<tr>
+						<td style="width: 20%;text-align: right">家庭住址: </td>
+						<td colspan="3" style="text-align: left"><input style="width:410px;" type="text" name="staffAddr" id="txt_staffAddr" class="easyui-textbox" value="${user.staffAddr}"/></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+	<div id="myscre_btnsave_information" style="width: 100%;text-align: center;">
+		<a id="myscre_btn_saveinf" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="myscre_btn_cancelinf" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	<!--密码  -->
+	<div id="myscre_password" class="easyui-dialog" title="修改" style="width:450px;height:249px;top:80px;"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#myscre_btnsave_password',closable:false,closed:true">
+    	<form id="myscre_saveForm_password" method="post">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 68%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+				<tr>
+					<td style="width:20%;">当前密码:</td>
+					<td style="width:30%;text-align: left;" >
+						<input type="text" name="myscre_password_old"  id="txt_myscre_password_old" class="easyui-passwordbox" required="required" style="width:140px;"/>
+					</td>
+				</tr>
+				<tr >
+				    <td style="width:20%;">新密码:</td>
+					<td style="width:30%;text-align: left;">
+						<input type="text" name="myscre_password_new"  id="txt_myscre_password_new" class="easyui-passwordbox" required="required"  style="width:140px;"/>
+					</td>
+				</tr>
+				<tr> 
+				    <td style="width:20%;">再次输入新密码:</td>
+					<td style="width:30%;text-align: left;">
+						<input type="text" name="myscre_password_again"  id="txt_myscre_password_again" class="easyui-passwordbox" required="required"  style="width:140px;"/>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</form>
+	</div>
+	<div id="myscre_btnsave_password" style="width: 100%;text-align: center;">
+		<a id="myscre_btn_savepas" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="myscre_btn_cancelpas" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	<div data-options="region:'center',title:'员工科研成果一览',split:false">
+		<div class="easyui-layout" data-options="fit:true,border:false">
+		    <div data-options="region:'north',split:false" style="height:50px;overflow: hidden">
+		    <table style="text-align: center;width:100%;" class="datagrid-btable myTable" id="tbl_staffdetail">
+				<tr>
+					<th style="width: 16%">科研课题</th>
+					<th style="width: 16%">教材专著</th>
+					<th style="width: 16%">学术论文</th>
+					<th style="width: 16%">专利成果</th>
+					<th style="width: 16%">学术报告</th>
+					<th style="width: 16%">科研获奖</th>
+				</tr>
+				<tr id="tr_scremess">
+					<td id="td_RptScientific">0</td>
+					<td id="td_RptBook">0</td>
+					<td id="td_RptPaper">0</td>
+					<td id="td_RptPatent">0</td>
+					<td id="td_RptAcademic">0</td>
+					<td id="td_RptAchievement">0</td>
+				</tr>
+			</table>
+		    </div>
+		    <div data-options="region:'west',split:false" style="width:50%">
+		    <div id="div_statics" style="width:100%;height: 100%">
+		    
+		    </div>
+		    </div>
+		    <div data-options="region:'center'" style="width:50%">
+		    <div id="div_devote" style="width:100%;height: 100%">
+		    
+		    </div>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

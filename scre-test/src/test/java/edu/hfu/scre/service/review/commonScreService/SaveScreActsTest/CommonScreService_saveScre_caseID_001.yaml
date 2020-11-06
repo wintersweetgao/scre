@@ -1,0 +1,80 @@
+CommonScreService_saveScre_caseID_001: !!com.alipay.test.acts.model.PrepareData
+  args:
+    description: null
+    inputArgs:
+    - description: null
+      flags: {}
+      nodeDesc: null
+      nodeGroup: null
+      objBaseDesc: null
+      objBaseName: null
+      objClass: edu.hfu.scre.entity.RptAcademic
+      object: !!edu.hfu.scre.entity.RptAcademic {academicDate: '2019-09-05', academicId: null,
+        academicMemo: 测试, academicTopic: 新员工科研培训, belongCycle: 第5轮, createTime: !!timestamp '2020-10-29T21:58:26.425Z',
+        expectedMark: null, fileCount: null, inOrder: 1, materials: null, recommend: '0',
+        screTopic: 院级好评, screType: 学术报告, staffDepart: 计算机科学与技术教研室, staffName: 高冬梅,
+        staffParentDepart: 财经信息工程系, staffTitle: 讲师(中)级, status: null, statusValue: null,
+        userCode: '2019190036'}
+  depDataSet:
+    description: null
+    virtualTables: []
+  description: 学术报告-新增-院好评
+  expectDataSet:
+    description: null
+    virtualTables:
+    - dataObjClazz: null
+      flags: {academicId: N, belongCycle: Y, createTime: D500, expectedMark: Y, inOrder: Y,
+        screTopic: Y, screType: Y, staffDepart: Y, staffName: Y, staffParentDepart: Y,
+        staffTitle: Y, status: Y, userCode: Y, academicDate: Y, academicMemo: Y, academicTopic: C,
+        recommend: Y}
+      nodeDesc: null
+      nodeGroup: null
+      tableBaseDesc: rptacademic
+      tableData:
+      - {academicId: '5', belongCycle: 第5轮, createTime: today, expectedMark: '100',
+        inOrder: '1', screTopic: 院级好评, screType: 学术报告, staffDepart: 计算机科学与技术教研室, staffName: 高冬梅,
+        staffParentDepart: 财经信息工程系, staffTitle: 讲师(中)级, status: BApprove, userCode: '2019190036',
+        academicDate: '2019-09-05', academicMemo: 测试, academicTopic: 新员工科研培训, recommend: '0'}
+      tableName: rptacademic
+    - dataObjClazz: null
+      flags: {log_id: N, action: Y, memo: C, newStatus: Y, oldStatus: Y, recordId: N,
+        recordType: Y, reviewDateTime: D800, staffName: Y, userCode: C}
+      nodeDesc: null
+      nodeGroup: null
+      tableBaseDesc: sysreviewlog
+      tableData:
+      - {log_id: '', action: 通过, memo: '新增:学术报告', newStatus: BApprove, oldStatus: AApprove,
+        recordId: '', recordType: RptAcademic, reviewDateTime: today, staffName: 高冬梅,
+        userCode: '2019190036'}
+      tableName: sysreviewlog
+  expectEventSet:
+    description: null
+    virtualEventObjects: []
+  expectException:
+    description: null
+    exceptionClass: null
+    expectException:
+      description: null
+      flags: {}
+      nodeDesc: null
+      nodeGroup: null
+      objBaseDesc: null
+      objBaseName: null
+      objClass: null
+      object: null
+    expectExceptionObject: null
+  expectResult:
+    description: null
+    result:
+      description: null
+      flags: {}
+      nodeDesc: null
+      nodeGroup: null
+      objBaseDesc: null
+      objBaseName: null
+      objClass: null
+      object: null
+    resultClazz: null
+  virtualParams:
+    description: null
+    params: {}

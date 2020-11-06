@@ -1,0 +1,36 @@
+=============================Start excuting TestCase caseId:CommonScreService_getContentByCon_caseID_001 查询-第一页数据=================
+PrepareData [description=查询-第一页数据]
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+Preparing DB data:
+null
+Executing sql:insert into rptacademic (academicId,belongCycle,createTime,expectedMark,inOrder,screTopic,screType,staffDepart,staffName,staffParentDepart,staffTitle,status,userCode,academicDate,academicMemo,academicTopic,recommend) values (?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,parameters:55,第5轮,100,1,院级好评,学术报告,计算机科学与技术教研室,高冬梅,财经信息工程系,讲师(中)级,BApprove,2019190036,2019-09-05,测试,新员工科研培训-接口测试,0,
+Executing sql:insert into rptacademic (academicId,belongCycle,createTime,expectedMark,inOrder,screTopic,screType,staffDepart,staffName,staffParentDepart,staffTitle,status,userCode,academicDate,academicMemo,academicTopic,recommend) values (?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,parameters:56,第5轮,100,1,院级好评,学术报告,计算机科学与技术教研室,高冬梅,财经信息工程系,讲师(中)级,BApprove,2019190036,2019-09-05,测试,新员工科研培训,0,
+Start to invoke method:getContentByCon parameters:
+[RptBase(staffName=null, staffTitle=null, staffParentDepart=null, staffDepart=null, userCode=null, status=null, statusValue=null, createTime=null, inOrder=1, expectedMark=null, belongCycle=null, screType=null, screTopic=null, recommend=null), 1, 2]
+Invocation result: [RptBase(staffName=高冬梅, staffTitle=讲师(中)级, staffParentDepart=财经信息工程系, staffDepart=计算机科学与技术教研室, userCode=2019190036, status=BApprove, statusValue=未提交, createTime=2020-11-06 09:47:55.0, inOrder=1, expectedMark=100, belongCycle=第5轮, screType=学术报告, screTopic=院级好评, recommend=0)]
+select academicId as academicId,belongCycle as belongCycle,createTime as createTime,expectedMark as expectedMark,inOrder as inOrder,screTopic as screTopic,screType as screType,staffDepart as staffDepart,staffName as staffName,staffParentDepart as staffParentDepart,staffTitle as staffTitle,status as status,userCode as userCode,academicDate as academicDate,academicMemo as academicMemo,academicTopic as academicTopic,recommend as recommend from rptacademic where (academicTopic = ?  ) 
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+=============================Start excuting TestCase caseId:CommonScreService_getContentByCon_caseID_002 查询-0条数据=================
+PrepareData [description=查询-0条数据]
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试2,
+Preparing DB data:
+null
+Executing sql:insert into rptacademic (academicId,belongCycle,createTime,expectedMark,inOrder,screTopic,screType,staffDepart,staffName,staffParentDepart,staffTitle,status,userCode,academicDate,academicMemo,academicTopic,recommend) values (?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,parameters:55,第5轮,100,1,院级好评,学术报告,计算机科学与技术教研室,高冬梅,财经信息工程系,讲师(中)级,BApprove,2019190036,2019-09-05,测试,新员工科研培训-接口测试,0,
+Executing sql:insert into rptacademic (academicId,belongCycle,createTime,expectedMark,inOrder,screTopic,screType,staffDepart,staffName,staffParentDepart,staffTitle,status,userCode,academicDate,academicMemo,academicTopic,recommend) values (?,?,now(),?,?,?,?,?,?,?,?,?,?,?,?,?,?) ,parameters:56,第5轮,100,1,院级好评,学术报告,计算机科学与技术教研室,高冬梅,财经信息工程系,讲师(中)级,BApprove,2019190036,2019-09-05,测试,新员工科研培训,0,
+Start to invoke method:getContentByCon parameters:
+[RptBase(staffName=null, staffTitle=null, staffParentDepart=null, staffDepart=null, userCode=null, status=null, statusValue=null, createTime=null, inOrder=1, expectedMark=null, belongCycle=null, screType=null, screTopic=null, recommend=null), 1, 2]
+Invocation result: []
+select academicId as academicId,belongCycle as belongCycle,createTime as createTime,expectedMark as expectedMark,inOrder as inOrder,screTopic as screTopic,screType as screType,staffDepart as staffDepart,staffName as staffName,staffParentDepart as staffParentDepart,staffTitle as staffTitle,status as status,userCode as userCode,academicDate as academicDate,academicMemo as academicMemo,academicTopic as academicTopic,recommend as recommend from rptacademic where (academicTopic = ?  ) 
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训-接口测试2,

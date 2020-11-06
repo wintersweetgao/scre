@@ -1,0 +1,7 @@
+column,comment,type,rule,flag,value
+materialId,,int(11),,N,
+createDate,,datetime,,D500,today
+materialPath,,varchar(100),,Y,
+materialTitle,,varchar(100),,Y,
+ordernum,,int(11),,Y,
+academicId,,int(11),,Y,

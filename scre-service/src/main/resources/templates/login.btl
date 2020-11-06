@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="styleSheet" href="${ctxPath}/static/css/login.css" type="text/css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/login.js"></script>
+</head>
+<body background="${ctxPath}/static/images/login_backimg.jpg">
+	<form  method="post"  id="loginForm" target="_self" action="${ctxPath}/userLogin">
+	<div  style="background:#F5F5F5; height: 600px; width: 600px;border-radius:300px;margin-left: 630px; border: rgba(192, 192, 192, 0.1) 15px solid ;">
+		<div style="padding-top: 70px;">	
+			<div   style="width: 100%; height: 60px; text-align: center;">
+				<font size="16" color="black" >龙财管理系统</font>
+			</div>
+			<div   style="width: 100%; height: 70px; text-align: center;">
+				<font size="6" color="black" >Long Cai Guan Li Xi Tong</font>
+			</div>
+			<div  align="center" style="height: 70px;">
+				<input id="txt_userName" name="userCode" type="text" class="style1" placeholder=" 工 号" />
+			</div>
+			<div  align="center" style="height: 70px;">
+				<input id="txt_userPass" name="userPass" type="password" class="style1" placeholder=" 密 码" />
+			</div>
+			<div   style="width: 100%;text-align: center">
+				<font  color="red" id="mess">${mess}</font>
+			</div>
+			<div  align="center" style="height: 60px;">
+				<input name="button"  type="button" class="style2" value="立  即  登  录"   id="btn_login"/>
+			</div>
+			<div  align="center" style="height: 70px;margin-left: 200px;">
+			<a href="${authUrlReg}" target="_blank" class="easyui-linkbutton"
+				  data-grant="" id="btn_userregistration">用户注册</a>
+			</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>

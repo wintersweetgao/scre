@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+    <link href="${ctxPath}/static/css/themes/gonggaoone/style.css" rel="stylesheet" type="text/css">
+    <script src="${ctxPath}/static/js/gonggaoone/jquery.js" type="text/javascript"></script>
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/jquery.bxslider.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.bxslider.min.js"></script>	
+    <script type="text/javascript" src="${ctxPath}/static/excellenceWorks/excellenceRenWen.js"></script>
+
+</head>
+<body>
+<div class="header">
+
+<a title="黑龙江财经学院"><img src="${ctxPath}/static/imgGongGaoOne/biaotou.png" alt="黑龙江财经学院" title="黑龙江财经学院" width="100%" height="100%" border="0"></a>
+</div>
+
+<div class="mainer">
+    <div class="ny_banner"><img src="${ctxPath}/static/imgGongGaoOne/ny_banner6.jpg"></div>
+    <div class="ny_bm">
+        <div class="left lm_lban" style="width:17%">
+            <div class="lm_top">新闻平台</div>
+            <div class="navdh" id="mm1">
+                <ul>
+                    
+ 
+ <li><a href="/scre/getNoticeall" title="通知公告" >通知公告</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceCaiXin" title="优秀作品财信">财信系优秀作品</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceKuaiJi" title="优秀作品">会计系优秀作品</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceGuanLi" title="优秀作品" >管理系优秀作品</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceYiShu" title="优秀作品">艺术系优秀作品</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceRenWen" title="优秀作品" class="active">人文系优秀作品</a></li>
+ <li><a href="/scre/excellenceWorks/excellenceJingJi" title="优秀作品">经济系优秀作品</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="ny_right">
+            <div class="lmy_lmtitle">
+                <span>优秀作品</span>
+                <div class="wz_top">您当前所在的位置：        
+                <a href="/scre/">首页</a>
+
+                &gt;&gt;
+                <a href="/scre/getNoticeall">新闻平台</a>
+
+                &gt;&gt;
+                <a>人文系优秀作品</a>
+
+</div>
+            </div>
+            <div class="navjz">
+                <div class="infob">
+                    
+<script language="javascript" src="${ctxPath}/static/js/gonggaoone/dynclicks.js"></script><script language="javascript" src="${ctxPath}/static/css/themes/gonggaoone/photoswipe.css" type="text/css" rel="stylesheet"><script language="javascript" src="${ctxPath}/static/js/gonggaoone/klass.js"></script><script language="javascript" src="${ctxPath}/static/js/gonggaoone/ajax.js"></script>
+<table id="tbl_rwx_detail" class="easyui-datalist"  style="width: 90%;height: 400px; fit:true;;overflow:hidden">
+			
+</table>
+
+<script>
+        function dosubc202583()
+        {
+            try{
+                var ua = navigator.userAgent.toLowerCase();
+                if(ua.indexOf("msie 8")>-1)
+                {
+                    window.external.AddToFavoritesBar(document.location.href,document.title,"");//IE8
+                }else{
+                    if (document.all) 
+                    {
+                        window.external.addFavorite(document.location.href, document.title);
+                    }else if(window.sidebar)
+                    {
+                        window.sidebar.addPanel( document.title, document.location.href, "");//firefox
+                    }
+                }
+        
+            }
+            catch (e){alert("无法自动添加到收藏夹，请使用 Ctrl + d 手动添加");}
+        }</script>
+
+                </div>
+                <div>
+                    <div class="pagenav">
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+<div class="f_lj">
+    <div class="width">
+        <div class="gxwz">各系网站：<script language="javascript" src="${ctxPath}/static/js/gonggaoone/openlink.js"></script>
+<a href="http://tcjsj.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41230)'>财经信息工程系</a><a href="http://kjx.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41231)'>会计系</a><a href="http://mjx.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41232)'>经济系</a><a href="http://gsgl.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41233)'>管理系</a><a href="http://ysx.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41234)'>艺术系</a><a href="http://rwkxx.hfu.edu.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 41235)'>人文科学系</a></div>
+        <div class="wbwx">
+            <div class="weibo" onmouseout="this.className = 'weibo';" onmouseover="this.className = 'weibo on';"><a href="javascript:;" onfocus="undefined"></a>
+                <div class="weibo_nr">
+                    <div class="arrow"></div>
+
+                        
+<img src="${ctxPath}/static/imgGongGaoOne/2019.jpg" width="85" height="85">            </div></div>
+            <div class="weixin" onmouseout="this.className = 'weixin';" onmouseover="this.className = 'weixin on';"><a href="javascript:;" onfocus="undefined"></a>
+                <div class="weixin_nr">
+                    <div class="arrow"></div>
+
+                        
+<img src="${ctxPath}/static/imgGongGaoOne/2019_002.jpg" width="85" height="85">        </div></div>
+
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="width">
+        <div class="footer_a">
+            <div class="yqlj_nr">
+                友情链接：
+
+<a href="http://www.nncc626.com/" title="" onclick='_addDynClicks("wburl", 1451276307, 41236)'>中国禁毒网</a> |
+<a href="http://www.626china.org/Index.htm" title="" onclick='_addDynClicks("wburl", 1451276307, 41237)'>中国禁毒数字展览馆</a> |
+<a href="http://www.moe.gov.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 51692)'>中华人民共和国教育部</a> |
+<a href="https://www.hljedu.gov.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 51693)'>黑龙江省教育厅</a> |
+<a href="http://www.univs.cn/" title="" onclick='_addDynClicks("wburl", 1451276307, 51694)'>中国大学生在线</a> 
+
+            </div>
+            <div class="f_wz">
+                <!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+<p>黑龙江财经学院 © 2006-2016 版权所有 <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">黑ICP备19004778号 </a>&nbsp; 学院地址：哈尔滨市利民开发区学院路1230号<br>招生电话：0451—85911881、85911882、85911883 &nbsp; &nbsp;邮政编码：150025 左：官方微信　右：官方微博</p>
+            </div>
+        </div>
+        <div class="ewm">    
+<img src="${ctxPath}/static/imgGongGaoOne/2019_003.jpg">    <img src="${ctxPath}/static/imgGongGaoOne/2019_002.jpg">    </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+</body></html>

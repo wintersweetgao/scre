@@ -1,0 +1,11 @@
+column,comment,type,rule,flag,value
+log_id,,int(11),,N,
+action,,varchar(50),,Y,通过
+memo,,varchar(500),,C,新增:学术报告
+newStatus,,varchar(50),,Y,BApprove
+oldStatus,,varchar(50),,Y,AApprove
+recordId,,int(11),,N,
+recordType,,varchar(50),,Y,RptAcademic
+reviewDateTime,,datetime,,Y,
+staffName,,varchar(50),,Y,高冬梅
+userCode,,varchar(50),,C,2019190036

@@ -1,0 +1,42 @@
+=============================Start excuting TestCase caseId:CommonScreService_saveScre_caseID_001 学术报告-新增-院好评=================
+PrepareData [description=学术报告-新增-院好评]
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,
+Preparing DB data:
+Start to invoke method:saveScre parameters:
+[RptBase(staffName=高冬梅, staffTitle=讲师(中)级, staffParentDepart=财经信息工程系, staffDepart=计算机科学与技术教研室, userCode=2019190036, status=null, statusValue=null, createTime=Fri Oct 30 05:58:26 CST 2020, inOrder=1, expectedMark=null, belongCycle=第5轮, screType=学术报告, screTopic=院级好评, recommend=0)]
+Invocation result: "succ"
+select academicId as academicId,belongCycle as belongCycle,createTime as createTime,expectedMark as expectedMark,inOrder as inOrder,screTopic as screTopic,screType as screType,staffDepart as staffDepart,staffName as staffName,staffParentDepart as staffParentDepart,staffTitle as staffTitle,status as status,userCode as userCode,academicDate as academicDate,academicMemo as academicMemo,academicTopic as academicTopic,recommend as recommend from rptacademic where (academicTopic = ?  ) 
+select log_id as log_id,action as action,memo as memo,newStatus as newStatus,oldStatus as oldStatus,recordId as recordId,recordType as recordType,reviewDateTime as reviewDateTime,staffName as staffName,userCode as userCode from sysreviewlog where (memo = ?  ) and (userCode = ?  ) 
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,
+=============================Start excuting TestCase caseId:CommonScreService_saveScre_caseID_002 学术报告-新增-系好评-参与次序1=================
+PrepareData [description=学术报告-新增-系好评-参与次序1]
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训2,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,
+Preparing DB data:
+Start to invoke method:saveScre parameters:
+[RptBase(staffName=高冬梅, staffTitle=讲师(中)级, staffParentDepart=财经信息工程系, staffDepart=计算机科学与技术教研室, userCode=2019190036, status=null, statusValue=null, createTime=Fri Oct 30 05:58:26 CST 2020, inOrder=1, expectedMark=null, belongCycle=第5轮, screType=学术报告, screTopic=系级好评, recommend=0)]
+Invocation result: "succ"
+select academicId as academicId,belongCycle as belongCycle,createTime as createTime,expectedMark as expectedMark,inOrder as inOrder,screTopic as screTopic,screType as screType,staffDepart as staffDepart,staffName as staffName,staffParentDepart as staffParentDepart,staffTitle as staffTitle,status as status,userCode as userCode,academicDate as academicDate,academicMemo as academicMemo,academicTopic as academicTopic,recommend as recommend from rptacademic where (academicTopic = ?  ) 
+select log_id as log_id,action as action,memo as memo,newStatus as newStatus,oldStatus as oldStatus,recordId as recordId,recordType as recordType,reviewDateTime as reviewDateTime,staffName as staffName,userCode as userCode from sysreviewlog where (memo = ?  ) and (userCode = ?  ) 
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训2,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,
+=============================Start excuting TestCase caseId:CommonScreService_saveScre_caseID_003 学术报告-新增-系好评-参与次序2=================
+PrepareData [description=学术报告-新增-系好评-参与次序2]
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训2,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,
+Preparing DB data:
+Start to invoke method:saveScre parameters:
+[RptBase(staffName=高冬梅, staffTitle=讲师(中)级, staffParentDepart=财经信息工程系, staffDepart=计算机科学与技术教研室, userCode=2019190036, status=null, statusValue=null, createTime=Fri Oct 30 05:58:26 CST 2020, inOrder=2, expectedMark=null, belongCycle=第5轮, screType=学术报告, screTopic=系级好评, recommend=0)]
+Invocation result: "succ"
+select academicId as academicId,belongCycle as belongCycle,createTime as createTime,expectedMark as expectedMark,inOrder as inOrder,screTopic as screTopic,screType as screType,staffDepart as staffDepart,staffName as staffName,staffParentDepart as staffParentDepart,staffTitle as staffTitle,status as status,userCode as userCode,academicDate as academicDate,academicMemo as academicMemo,academicTopic as academicTopic,recommend as recommend from rptacademic where (academicTopic = ?  ) 
+select log_id as log_id,action as action,memo as memo,newStatus as newStatus,oldStatus as oldStatus,recordId as recordId,recordType as recordType,reviewDateTime as reviewDateTime,staffName as staffName,userCode as userCode from sysreviewlog where (memo = ?  ) and (userCode = ?  ) 
+====================Cleaning up DB data preparations=============================
+Executing sql:delete from rptacademic where academicTopic = ?,parameters:新员工科研培训2,
+Executing sql:delete from sysreviewlog where memo = ? and userCode = ?,parameters:新增:学术报告,2019190036,

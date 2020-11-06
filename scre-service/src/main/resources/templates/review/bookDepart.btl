@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/bookDepart.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/previewImg.js"></script>
+
+<title></title>
+</head>
+<body class="easyui-layout">
+		<div data-options="region:'north'" style="height:50px;vertical-align: middle;overflow:hidden">
+			<form id="book_queryForm" method="post">
+			<table style="width: 98%">
+				<tr style="height:50px;vertical-align: middle;">
+				
+					<td style="width: 30%">
+						<label for="name">教材专著题目:</label>
+						<input type="text" name="bookName"  class="easyui-textbox" />
+					</td>
+					<td style="text-align: right">
+						<a id="btn_search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+					</td>			
+				</tr>
+			</table>
+			</form>
+		</div>
+		<div data-options="region:'center',title:'教材专著查询列表',iconCls:'icon-ok'" >
+			<table id="tbl_book_detail">
+			</table>
+		</div>
+	<div data-options="region:'south',split:false,border:false" style="height:40px;padding: 2px;text-align: right">
+		<a id="btn_passbook" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-add'">通过</a>
+		<a id="btn_nopassbook" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-add'">拒绝</a>
+	</div>
+	
+	<!-- 拒绝 -->
+	<div id="dlg_nopassbook" class="easyui-dialog" title="输入备注" style="width:400px;height:250px;top:80px;left:270px;"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#book_btnSub',closable:false,closed:true">
+    	<form id="nopassFormbook" method="post">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+				<tr style="vertical-align: middle;">
+					<td style="text-align: left;" id="td_refuseMess">
+						请输入拒绝原因：
+					</td>
+				</tr>
+				<tr style="vertical-align: middle;">
+					<td style="text-align: left;">
+						<input class="easyui-textbox" data-options="multiline:true" id="noPass_reason"  value="" style="width:340px;height:100px">
+					</td>
+				</tr>
+			</table>
+			</div>
+		</form>
+	</div>
+	<div id="book_btnSub" style="width: 100%;text-align: center;">
+		<a id="btn_passbook_submit" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="btn_nopassbook_submit" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	<div id="scientfit_viewfile"></div>
+</body>
+</html>

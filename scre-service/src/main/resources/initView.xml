@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views>
+	<view need-update="true" viewname="viewScreAchieve" desc="科研成果"  type="mysql">
+	<![CDATA[
+		SELECT CONCAT('RptAcademic',a.academicId) as rptId, a.academicTopic as rptName, a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptAcademic' as className FROM rptacademic a
+		UNION ALL      
+		SELECT CONCAT('Rptachievement',a.achievementId) as rptId,a.achievementName as rptName,a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptAchievement' as className FROM rptachievement a
+		UNION ALL      
+		SELECT CONCAT('RptBook',a.bookID) as rptId,a.bookName as rptName,a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptBook' as className FROM rptbook a
+		UNION ALL      
+		SELECT CONCAT('RptPaper',a.paperId) as rptId,a.paperThesis as rptName,a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptPaper' as className FROM rptpaper a
+		UNION ALL      
+		SELECT CONCAT('RptPatent',a.patentId) as rptId,a.patentName as rptName,a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptPatent' as className FROM rptpatent a
+		UNION ALL      
+		SELECT CONCAT('RptScientific',a.scieId) as rptId,a.scieName as rptName,a.belongCycle,a.expectedMark,a.inOrder,a.staffDepart,a.staffName,a.staffParentDepart,a.staffTitle,a.status,a.userCode,a.screTopic,a.screType,a.createTime,a.recommend, 'RptScientific' as className FROM rptscientific a 
+	]]>
+	</view>
+</views>

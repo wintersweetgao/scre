@@ -1,0 +1,37 @@
+
+			.style{
+				
+				height: 30px;
+				width: 15%;
+				/* border-radius:50px; */
+				background: lawngreen;	
+				border-bottom-left-radius:2em;
+				border-top-left-radius:2em;
+				/* border:red 5px solid; */
+			}
+			.style1{
+				width: 300px;
+				height: 30px;
+				padding-left: 20px;
+				/* border:red 5px solid; */
+
+			}
+			.style2{
+				width: 320px;
+				height: 40px;
+				border-radius:10px;
+				background: #DCDCDC;
+				font-size: 20px;
+				color: black;
+				/* border:red 5px solid; */
+			}
+			
+		.login-box::before{
+				content:'';
+				position:absolute;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				filter:blur(10px) contrast(.8);
+				z-index:-1;

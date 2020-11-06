@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/jquery.bxslider.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/book.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/previewImg.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/uploadMaterial.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/review/js/getReviewLog.js"></script>
+<title></title>
+</head>
+<script type="text/javascript">
+
+</script>
+<body class="easyui-layout">
+		<div data-options="region:'north'" style="height:50px;vertical-align: middle;overflow:hidden">
+			<form id="book_queryForm" method="post">
+			<table style="width: 98%">
+				<tr style="height:50px;vertical-align: middle;">
+				
+					<td style="width: 30%">
+						<label for="name">教材，著作名称:</label>
+						<input type="text" name="bookName"  class="easyui-textbox" />
+					</td>
+					<td style="text-align: right">
+						<a id="btn_search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+					</td>			
+				</tr>
+			</table>
+			</form>
+		</div>
+		<div data-options="region:'center',title:'教材，著作查询列表',iconCls:'icon-ok'" >
+			<table id="tbl_book_detail">
+			</table>
+		</div>
+	<div data-options="region:'south',split:false,border:false" style="height:40px;padding: 2px;text-align: right">
+		<a id="book_btn_add" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-add'">增加</a>
+		<a id="book_btn_edit" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改</a>
+		<a id="book_btn_del" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a>
+		<a id="book_btn_sub" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-add'">提交</a>
+		<a id="book_btn_file" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">材料维护</a>
+		<a id="book_btn_log" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查看审批日志</a>
+	</div>
+	<div id="book_save" class="easyui-dialog" title="增加" style="width:600px;height:350px;top:80px;"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#book_btnsave',closable:false,closed:true">
+    	<form id="book_saveForm" method="post">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 98%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+				<tr>
+					<td style="height:30px;width:20%">教材著作:</td>
+					<td style="text-align: left;" colspan="3">
+						<input type="text" name="bookName"  id="txt_bookName" class="easyui-textbox" required="required" style="width:95%;"/>
+						<input type="hidden" name="bookID"  id="txt_bookID">
+						<input type="hidden" name="recommend"  id="txt_recommend" value="0">
+						<input type="hidden" name="screType"  value="教材著作" id="screTopic">
+					</td>
+				</tr>
+				
+				<tr>
+					<td style="height: 30px" >第一主编:</td>
+				
+					<td style="width: 30%;text-align: left ">
+						<select id="txt_firstEditor" class="easyui-combobox"	name="firstEditor" style="width: 155px;" data-options="editable:false">
+								<option value="主编">主编</option>
+								<option value="第一主编">第一主编</option>
+						</select></td>
+				<td style="width:20%;"><label for="screTopic">期刊类型:</label></td>
+				<td style="width:30%;text-align: left;">
+						<input class="easyui-textbox" name="screTopic"  value="教材著作" data-options="editable:false" style="width:145px;">
+					</td>
+
+					<tr>
+					<td style="height: 30px" >出版社:</td>
+					<td style="text-align: left; height: 30px;">
+						<input type="text" name="press"  id="txt_press" class="easyui-textbox" required="required" style="width:155px;"/>
+							<td >出版日期:</td>
+					<td style="text-align: left;">
+						<input type="text" name="publishDate" class="easyui-datebox" id="txt_publishDate" required="required" style="width:145px;"/>
+					</td>
+
+					</td>
+
+					</tr>
+				
+					<td >参与次序:</td>
+						<td style="text-align: left;">
+						<input id="txt_inOrder"  name="inOrder"  value="1" class="easyui-textbox" data-options="editable:false"style="width:155px;">
+						</td>
+						<td style="text-align: left;">
+						
+					</td>
+					<td style="text-align: left;">
+						
+					</td>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" style="text-align: left;">注1:学院教师的职务教材专著(单位为黑龙江财经学院有效),学院认定后可予 200 分科研积分。独立或第一主编的教材和专著，参编不在统计之列</td>
+				</tr>
+				<tr>
+				
+				</tr>
+			</table>
+			</div>
+
+		</form>
+	</div>
+	<div id="book_btnsave" style="width: 100%;text-align: center;">
+		<a id="book_btn_save" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="book_btn_cancel" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	
+	<div id="book_delect" class="easyui-dialog" title="删除" style="width:400px;height:150px;top:80px;left:260px"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#book_btnDel',closable:false,closed:true">
+    	<form id="book_delectForm" method="post">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+				<tr style="vertical-align: middle;">
+					<td style="text-align: left;" id="td_dismess">
+						是否删除该条信息？
+					</td>
+				</tr>
+			</table>
+			</div>
+		</form>
+	</div>
+	<div id="book_btnDel" style="width: 100%;text-align: center;">
+		<a id="book_btn_delect" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="book_btn_cancelDel" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	<!-- 提交弹出页面 -->
+	<div id="book_submit" class="easyui-dialog" title="提交" style="width:400px;height:150px;top:80px;left:260px"
+    	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#book_btnSub',closable:false,closed:true">
+    	<form id="book_submitForm" method="post">
+    	<div style="width: 100%;text-align: center;">
+			<table style="width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+				<tr style="vertical-align: middle;">
+					<td style="text-align: left;" id="td_submitMess">
+						是否提交该条信息？提交后不能修改！
+					</td>
+				</tr>
+			</table>
+		</div>
+		</form>
+	</div>
+	<div id="book_btnSub" style="width: 100%;text-align: center;">
+		<a id="book_btn_submit" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="book_btn_cancelSub" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>
+	<!--维护附件材料  -->
+	<div id="book_material" style="top:80px;left:260px">
+	</div>
+	<div id="scie_viewfile"></div>
+	<!-- 审批日志 -->
+	<div id="book_log" style="top:80px;left:260px">
+	</div>
+</body>
+</html>

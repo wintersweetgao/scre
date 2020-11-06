@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/sysset/js/dictionary.js"></script>
+<title>数据字典</title>
+</head>
+<body class="easyui-layout">
+<div data-options="region:'north'" style="height:50px;vertical-align: middle;overflow:hidden">
+	<form id="queryForm" method="post">
+	<table style="width: 98%">
+		<tr style="height:50px;vertical-align: middle;">
+			<td style="width: 30%">
+				<label for="name">字典分类:</label>
+				<select id="sel_dictType" name="dictType" class="easyui-combobox">
+					<option value="">--请选择--</option>
+					<option value="职称分类">职称分类</option>
+					<option value="科研达标类型">科研达标类型</option>
+					<option value="纵向科研">纵向科研</option>
+					<option value="横向科研">横向科研</option>
+					<option value="科研论文">科研论文</option>
+					<option value="学术报告">学术报告</option>
+					<option value="专利专著">专利专著</option>
+					<option value="科研获奖">科研获奖</option>
+				</select>
+			</td>
+			<td style="text-align: right">
+				<a id="btn_search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+			</td>			
+		</tr>
+	</table>
+	</form>
+</div>
+<div data-options="region:'center',title:'数据字典查询列表',iconCls:'icon-ok'" >
+	<table id="tbl_dictionary_detail">
+	</table>
+</div>
+</body>
+</html>

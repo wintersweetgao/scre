@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>黑龙江财经学院2018年度发表论文统计表</title>
+	<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/statistics/js/scientificStatistics.js"></script>
+
+</head>
+
+
+<body class="easyui-layout">
+	<div data-options="region:'north'" style="height:50px;vertical-align: middle;overflow:hidden">
+			<form id="scientific_queryForm" method="post">
+			<table style="width: 98%">
+				<tr style="height:50px;vertical-align: middle;">
+				
+					<td style="width: 30%">
+						<label>课题名称:</label>
+						<input type="text" name="scieName"  id="txt_scieName" class="easyui-textbox" />
+					</td>
+					<td style="width: 30%">
+						<label >系部处:</label>
+						<select id="sel_staffParentDepart" class="easyui-combobox" name="staffParentDepart" data-options="editable:false"  style="width: 180px">
+					   	   <option value="">--请选择--</option>
+					   	   <%
+					     		for(depart in departs){
+					     	%>
+					     	<option value="${depart.departName}">${depart.departName}</option>
+						   	<%
+						   		}
+						   	%>  
+					    
+						</select>
+					</td>
+					<td style="text-align: right">
+						<a id="btn_search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">查询</a>
+					</td>			
+				</tr>
+			</table>
+			</form>
+	</div>
+	<div data-options="region:'center',title:'院科研课题查询列表',iconCls:'icon-ok'" >
+		<table id="tbl_scientific_detail">
+		</table>
+	</div>
+		<div data-options="region:'south',split:false,border:false" style="height:40px;padding: 2px;text-align: right">
+		 <%
+        if (hasPermission('000300002')){
+        %>
+		<a id="btn_recommend_scientific" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">推荐</a>
+		 <%}%>
+		<a id="btn_openexl_scientific" href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-add'">导出excel</a>
+	
+	</div>    
+	
+	<div id="scientific_btnSub" style="width: 100%;text-align: center;">
+		<a id="btn_confirmNoPass" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+		<a id="btn_cancelNoPass" style="margin: 2px 16px;" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+	</div>	
+	<div id="scientifit_viewfile"></div>
+</body>
+</html>

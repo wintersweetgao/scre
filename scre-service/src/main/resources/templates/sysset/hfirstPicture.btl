@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+ <link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/jquery.bxslider.css">
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+ <script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+  <script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+<script type="text/javascript" src="${ctxPath}/static/sysset/js/hfirstpicture.js"></script>
+<title></title>
+</head>
+
+<body class="easyui-layout">
+		<div data-options="region:'center',title:'图片列表(注：上传的图片会被重新命名)',iconCls:'icon-ok'" >
+			<table id="tbl_hfirstPicture_detail">
+			<% for (var i=0;i<lsp.~size;i++) {%>
+				<tr style="vertical-align: middle;">
+					<td>图片${i+1}:</td>
+					<td>${lsp[i].hfirstPicturePath}</td>
+					<td style="text-align: left;">
+						<form  method="post" enctype="multipart/form-data">
+							<input class="easyui-filebox"  name="materialfile" style="width:300px" data-options="buttonText:'选择文件',accept:'image/jpeg'">
+							<input type="hidden" name="hfirstPictureId" value="${lsp[i].hfirstPictureId}">
+						</form>
+					</td>
+					<td>
+						<a  href="#" style="margin: 2px 4px" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">替换</a>
+					</td>
+				</tr>
+			<%}%>
+			</table>
+		</div>	
+</body>
+</html>

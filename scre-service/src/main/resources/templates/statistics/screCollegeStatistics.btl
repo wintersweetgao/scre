@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/review/css/myScre.css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/highcharts/highcharts.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/highcharts/highcharts-more.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/statistics/js/screCollegeStatistics.js"></script>
+<title></title>
+</head>
+<body class="easyui-layout">
+	<input type="hidden" value="${cycleName}" id="txt_cycleName">
+	<div data-options="region:'center',title:'',split:false,border:false">
+		<div class="easyui-layout" data-options="fit:true,border:false">
+		    <div data-options="region:'north',split:false" style="height:50px;overflow: hidden">
+		    <table style="text-align: center;width:100%;" class="datagrid-btable myTable" id="tbl_staffdetail">
+				<tr>
+					<th style="width: 14%">科研课题</th>
+					<th style="width: 14%">教材专著</th>
+					<th style="width: 14%">学术论文</th>
+					<th style="width: 14%">专利成果</th>
+					<th style="width: 14%">学术报告</th>
+					<th style="width: 14%">科研获奖</th>
+					<th style="width: 14%;font-size: 16px;color: blue">合计作品数</th>
+				</tr>
+				<tr id="tr_scremess">
+					<td id="td_RptScientific">0</td>
+					<td id="td_RptBook">0</td>
+					<td id="td_RptPaper">0</td>
+					<td id="td_RptPatent">0</td>
+					<td id="td_RptAcademic">0</td>
+					<td id="td_RptAchievement">0</td>
+					<td id="td_screTotal" style="width: 14%;font-size: 16px;color: blue">0</td>
+				</tr>
+			</table>
+		    </div>
+		    <div data-options="region:'west',split:false" style="width:50%">
+		    <div id="div_statics" style="width:100%;height: 50%;border-bottom : 1px solid #95B8E7;" >
+		    	<div style="width:100%;height: 100%;display: none" id="div_screPercent">
+		    	</div>
+		    	<div class="spinner" id="screPercent-loading" >
+				  <div class="spinner-container container1">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container2">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container3">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				</div>
+		    </div>
+		    <div  style="width:100%;height: 50%;">
+		    	<div style="width:100%;height: 100%;display: none" id="div_screRptCount">		    	
+		    	</div>
+		   		<div class="spinner" id="screRptCount-loading" >
+				  <div class="spinner-container container1">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container2">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container3">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				</div>
+		    </div>
+		    </div>
+		    <div data-options="region:'center'" style="width:50%">
+		    <div  style="width:100%;height: 50%;border-bottom : 1px solid #95B8E7;">
+		    	<div style="width:100%;height: 100%;" id="div_screBar" style="width:100%;height: 100%;display: none">
+		    	</div>
+		    	
+		    	<div class="spinner" id="screBar-loading" >
+				  <div class="spinner-container container1">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container2">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container3">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				</div>
+		    </div>
+		    <div  style="width:100%;height: 50%">
+		    	<div style="width:100%;height: 100%;display: none" id="div_screLineResults">
+		    	
+		    	</div>
+		    	<div class="spinner" id="screLineResults-loading">
+				  <div class="spinner-container container1">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container2">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				  <div class="spinner-container container3">
+				    <div class="circle1"></div>
+				    <div class="circle2"></div>
+				    <div class="circle3"></div>
+				    <div class="circle4"></div>
+				  </div>
+				</div>
+		    </div>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="${ctxPath}/static/css/index.css">
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.serializejson.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/sysset/js/screCycle.js"></script>
+<title>数据字典</title>
+</head>
+<body class="easyui-layout">
+<div data-options="region:'north'" style="height:50px;vertical-align: middle;overflow:hidden">
+	<div style="font-size: 18px;margin-top: 14px;">当前科研周期：<span id="span_cycleName" name="cycleName"></span>，截止至：<span id="span_endDate"name="endDate"></span></div>
+</div>
+<div data-options="region:'center',title:'科研达标周期列表',iconCls:'icon-ok'" >
+	<table id="tbl_cycle_detail">
+	</table>
+</div>
+<div data-options="region:'south',split:false,border:false" style="height:40px;padding: 2px;text-align: right">
+	<a id="sycle_btn_add" href="#" style="margin: 2px 4px;width: 370px;" class="easyui-linkbutton" data-options="iconCls:'icon-add'">结束当前科研周期，进入下一科研周期</a>
+</div>
+
+<div id="scrdCycle_edit" class="easyui-dialog" title="增加" style="width:400px;height:300px;top:80px;"
+	data-options="iconCls:'icon-save',resizable:false,modal:true,buttons:'#scrdCycle_btnsave',
+	closable:false,closed:true">
+	<form id="screCycleForm" method="post">
+	<div style="width: 100%;text-align: center;">
+		<table style="width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;" class="datagrid-btable myTable">
+			<tr style="vertical-align: middle;">
+				<td style="width:20%;"><label >达标周期名称:</label></td>
+				<td style="width:30%;text-align: left;">
+					<input id="txt_cycleName"  name="cycleName" class="easyui-textbox" required="required">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td style="width:20%;"><label >达标开始日期:</label></td>
+				<td style="width:30%;text-align: left;">
+					<input id="txt_beginDate" name="beginDate" data-options="editable:false" type="text" class="easyui-datebox" required="required">
+				</td>
+			</tr>
+			<tr style="vertical-align: middle;">
+				<td style="width:20%;"><label >达标结束日期:</label></td>
+				<td style="width:30%;text-align: left;">
+					<input id="txt_endDate" name="endDate" data-options="editable:false" type="text" class="easyui-datebox" required="required">
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div id="scrdCycle_btnsave" style="width: 100%;text-align: center;">
+	<a id="scrdCycle_btn_save" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确定</a>
+	<a id="scrdCycle_btn_cancel" style="margin: 2px 16px;" 	href="#" class="easyui-linkbutton" data-options="iconCls:'icon-no'">取消</a>
+</div>
+</body>
+</html>

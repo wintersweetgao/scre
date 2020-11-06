@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+		<script type="text/javascript" src="${ctxPath}/static/js/common.js"></script>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+alert("页面超时，请重新登录");
+top.location.href = getRootPath();
+</script>
+</body>
+</html>
