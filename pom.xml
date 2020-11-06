@@ -263,13 +263,12 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
                 <configuration>
-                    <includes>
-                        <include>edu/hfu/scre/**/*</include>
-                    </includes>
                     <excludes>
-                        <exclude>com/hljcj/acts/**/*</exclude>
-                        <exclude>com/test/**/*</exclude>
-                        <exclude>edu/hfu/scre/action/**/*</exclude>
+                        <exclude>**/com/hljcj/acts/**/**/*</exclude>
+                        <exclude>**/com/hljcj/acts/**/**/**/*</exclude>
+                        <exclude>**/com/alipay/test/acts/model/*</exclude>
+                        <exclude>**/edu/hfu/scre/action/**/*</exclude>
+                        <exclude>**/edu/hfu/scre/action/*</exclude>
                     </excludes>
                     <destFile>${jacoco.path}</destFile>
                     <dataFile>${jacoco.path}</dataFile>
