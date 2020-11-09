@@ -22,6 +22,7 @@
         <alibaba.druid>1.1.17</alibaba.druid>
         <mysql.connector>8.0.17</mysql.connector>
         <jacoco.path>${project.build.directory}/jacoco-ut.exec</jacoco.path>
+
     </properties>
 
     <dependencyManagement>
@@ -310,7 +311,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <configLocation>scre-test/src/test/resources/codetool/google_checks.xml</configLocation>
+                    <configLocation>google_checks.xml</configLocation>
                 </configuration>
             </plugin>
             <!-- 配置pmd对java源文件进行检查，检测出可以优化的代码 -->
