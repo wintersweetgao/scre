@@ -11,6 +11,7 @@
     <modules>
         <module>scre-service</module>
         <module>scre-test</module>
+        <module>buildtools</module>
     </modules>
 
 
@@ -218,6 +219,7 @@
               <version>0.8.5</version>
           </dependency>
 
+
           <!--====================测试引入的包结束==========================-->
       </dependencies>
     </dependencyManagement>
@@ -301,23 +303,38 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.0.1</version>
+            </plugin>
+
+            <!-- 配置checkStyle代码规范检查，命名等是否符合规则，差劲的代码，复杂度
+              http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/multi-module-config.html
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>www.hfu.edu.cn</groupId>
+                        <artifactId>build-tools</artifactId>
+                        <version>1.1</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
+                        <id>verify</id>
+                        <phase>verify</phase>
+                        <configuration>
+                            <skip>true</skip>
+                            <configLocation>codecheck/google_checks.xml</configLocation>
+                            <encoding>UTF-8</encoding>
+                            <failsOnError>true</failsOnError>
+                            <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                        </configuration>
                         <goals>
                             <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- 配置checkStyle代码规范检查 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <configLocation>google_checks.xml</configLocation>
-                </configuration>
             </plugin>
             <!-- 配置pmd对java源文件进行检查，检测出可以优化的代码 -->
             <plugin>
@@ -328,23 +345,18 @@
         </plugins>
     </build>
 
-    <reporting>
+<!--    <reporting>
         <plugins>
-            <!-- 如果要生成findbugs.html的话需要放到这里面 -->
-            <!-- 配置findbugs对编译文件中可能出现的问题在运行前进行检查 -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
                 <configuration>
-                    <threshold>High</threshold>
-                    <effort>Default</effort>
-                    <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-                    <findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
+                    <configLocation>codecheck/google_checks.xml</configLocation>
+                    &lt;!&ndash;<headerLocation>whizbang/LICENSE.txt</headerLocation>&ndash;&gt;
                 </configuration>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting>-->
 
 </project>
