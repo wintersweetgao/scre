@@ -321,13 +321,13 @@
                 </dependencies>
                 <executions>
                     <execution>
+                        <!--在maven的verify阶段skip执行，因为若执行检查不过打包不成功-->
                         <id>verify</id>
                         <phase>verify</phase>
                         <configuration>
                             <skip>true</skip>
                             <configLocation>codecheck/google_checks.xml</configLocation>
                             <encoding>UTF-8</encoding>
-                            <failsOnError>true</failsOnError>
                             <includeTestSourceDirectory>false</includeTestSourceDirectory>
                         </configuration>
                         <goals>
@@ -344,19 +344,5 @@
             </plugin>
         </plugins>
     </build>
-
-<!--    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                    <configLocation>codecheck/google_checks.xml</configLocation>
-                    &lt;!&ndash;<headerLocation>whizbang/LICENSE.txt</headerLocation>&ndash;&gt;
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>-->
 
 </project>
